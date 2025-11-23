@@ -7,7 +7,7 @@ public class Gaji {
         Scanner input = new Scanner(System.in);
 
         int gaji[] = {5000000, 6500000, 9500000};
-        double lembur[] = {30, 32, 34, 36, 38};
+        int lembur[] = {30, 32, 34, 36, 38};
 
         System.out.print("Masukan golongan (A/B/C) : ");
         String golongan = input.nextLine().toUpperCase();
