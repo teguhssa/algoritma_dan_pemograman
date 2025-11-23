@@ -38,6 +38,8 @@ public class Gaji {
             } else {
                 persen = lembur[jamLembur - 1] / 100;
             }
+        } else {
+            persen = 0;
         }
 
 
