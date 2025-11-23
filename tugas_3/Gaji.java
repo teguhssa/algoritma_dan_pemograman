@@ -13,20 +13,18 @@ public class Gaji {
         String golongan = input.nextLine().toUpperCase();
 
         int gajiTmp = 0;
-        switch (golongan) {
-            case "A":
-                gajiTmp = gaji[0];
-                break;
-            case "B":
-                gajiTmp = gaji[1];
-                break;
-            case "C":
-                gajiTmp = gaji[2];
-                break;
-            default:
-                System.out.println("Golongan tidak diketahui");
-                System.exit(0);
+
+        if (golongan.equals("A")) {
+             gajiTmp = gaji[0];
+        } else if (golongan.equals("B")) {
+            gajiTmp = gaji[1];
+        } else if (golongan.equals("C")) {
+            gajiTmp = gaji[2];
+        } else {
+            System.out.println("Golongan tidak diketahui");
+            System.exit(0);
         }
+
 
         System.out.print("Masukan jam lembur : ");
         int jamLembur = input.nextInt();
@@ -34,16 +32,17 @@ public class Gaji {
 
         if (jamLembur >= 1) {
             if (jamLembur >= 5) {
-                persen = lembur[4] / 100;
+                persen = lembur[4] / 100.0;
             } else {
-                persen = lembur[jamLembur - 1] / 100;
+                persen = lembur[jamLembur - 1] / 100.0;
             }
-        } else {
-            persen = 0;
         }
 
+        double gajiLembur = gajiTmp * persen;
+        double takeHomePay = gajiTmp + gajiLembur;
 
-        int takeHomePay = (int) (gajiTmp * persen) + gajiTmp;
-        System.out.println("Take Home Pay " + takeHomePay);
+        System.out.println("Persen : " + persen);
+        System.out.println("Gaji Lembur : " + (int) gajiLembur);
+        System.out.println("Take Home Pay : " + (int) takeHomePay);
     }
 }
